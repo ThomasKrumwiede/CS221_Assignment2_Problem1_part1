@@ -1,11 +1,11 @@
-#ifndef H_GRAPH
-#define H_GRAPH
+#pragma once
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <queue>
 #include <list>
+
 using namespace std;
 const int MAX_SIZE = 20;
 
@@ -80,4 +80,3 @@ private:
        
 };
 
-#endif

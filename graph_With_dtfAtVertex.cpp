@@ -126,17 +126,24 @@ void Graph::dft(int v, bool visited[])
 
 void Graph::dftAtVertex_(int vertex)
 {
+    //create a bool variable used to determine if a node had been visited 
      bool *visited;
 
      visited = new bool[gSize];
 
+     //initailize all nodes in the graph as unvisited 
      for(int index = 0; index < gSize; index++)
          visited[index] = false;
- 
+       
+     //initiate dft() member fuinction at a specified node 
      dft(vertex,visited);
- 
-     delete [] visited;
+    
+     //Check for any nodes that were not visited durring the original dft() call 
+     for (int index = 0; index < gSize; index++)
+         if(visited[index] == false)  dft(index, visited);
 
+
+     delete [] visited;
 } //end dftAtVertex
 
 
